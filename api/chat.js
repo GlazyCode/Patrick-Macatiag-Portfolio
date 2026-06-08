@@ -86,9 +86,11 @@ module.exports = async (req, res) => {
 
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
-    console.error("GEMINI_API_KEY is not set");
-    return res.status(500).json({ reply: "Chat is not configured. Please set GEMINI_API_KEY in Vercel." });
+    console.error("GEMINI_API_KEY is not set in environment variables");
+    return res.status(500).json({ reply: "❌ GEMINI_API_KEY not set in Vercel environment variables." });
   }
+  
+  console.log("API Key found, length:", apiKey?.length);
 
   const userMessage = req.body && req.body.message;
   if (!userMessage || typeof userMessage !== "string") {
@@ -113,6 +115,7 @@ module.exports = async (req, res) => {
     } catch (err) {
       lastError = err;
       const msg = String(err?.message || "").toLowerCase();
+      console.error(`Attempt ${attempt} failed:`, err?.message);
 
       // User-friendly messages for known errors
       if (msg.includes("429") || msg.includes("resource_exhausted") || msg.includes("rate limit")) {
