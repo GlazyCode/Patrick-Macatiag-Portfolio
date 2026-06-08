@@ -35,13 +35,13 @@ class PageRouter {
             const href = link.getAttribute('href');
             if (!href) return;
 
-            // Check if link is local, not a hash/anchor, not an external site, and not opening in new tab
             const isLocal = href.startsWith('/') || href.includes(window.location.hostname) || !href.includes('://');
             const isAnchor = href.startsWith('#');
             const isTargetBlank = link.getAttribute('target') === '_blank';
             const isMailTo = href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('wa.me');
+            const isSamePageHash = href.includes('#') && href.split('#')[0] === window.location.pathname.split('/').pop();
 
-            if (isLocal && !isAnchor && !isTargetBlank && !isMailTo && !this.isTransitioning) {
+            if (isLocal && !isAnchor && !isTargetBlank && !isMailTo && !this.isTransitioning && !isSamePageHash) {
                 e.preventDefault();
                 this.navigateTo(href);
             }
@@ -50,6 +50,27 @@ class PageRouter {
         // Handle browser Back/Forward buttons
         window.addEventListener('popstate', () => {
             this.loadPage(window.location.pathname + window.location.search, false);
+        });
+
+        // Handle hash/anchor link clicks for same-page navigation
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a');
+            if (!link) return;
+
+            const href = link.getAttribute('href');
+            if (!href) return;
+
+            if (href.startsWith('#') && !this.isTransitioning) {
+                e.preventDefault();
+                const targetId = href.slice(1);
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) {
+                    targetEl.scrollIntoView({ behavior: 'smooth' });
+                }
+
+                // Update active state for hash links
+                this.updateActiveNavLinks(window.location.pathname + '#' + targetId);
+            }
         });
     }
 
@@ -159,12 +180,19 @@ class PageRouter {
     updateActiveNavLinks(url) {
         const links = document.querySelectorAll('.header__menu-link, .mobile-nav-link');
         const cleanUrl = url.split('/').pop() || 'index.html';
+        const urlHash = url.includes('#') ? url.split('#')[1] : '';
 
         links.forEach(link => {
             const href = link.getAttribute('href');
-            const cleanHref = href.split('/').pop() || 'index.html';
+            let cleanHref = href.split('/').pop() || 'index.html';
+            const linkHash = href.includes('#') ? href.split('#')[1] : '';
 
-            if (cleanHref === cleanUrl || (cleanUrl === 'index.html' && cleanHref === '/') || (cleanUrl === '/' && cleanHref === 'index.html')) {
+            const isActive = cleanHref === cleanUrl ||
+                (cleanUrl === 'index.html' && cleanHref === '/') ||
+                (cleanUrl === '/' && cleanHref === 'index.html') ||
+                (urlHash && linkHash && urlHash === linkHash && cleanUrl === cleanHref);
+
+            if (isActive) {
                 link.classList.add('active');
             } else {
                 link.classList.remove('active');
