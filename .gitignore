@@ -1,0 +1,19 @@
+# Environment and secrets (never commit API keys)
+.env
+.env.local
+.env.*.local
+**/.env
+chatbot/.env
+
+# Dependencies
+node_modules/
+
+# Optional: keep chatbot as local dev only; Vercel uses api/ only
+# chatbot/node_modules/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlazyCode | Full-Stack Developer & IT Specialist</title>
+    <meta name="description"
+        content="Portfolio of GlazyCode, an award-winning BSIT student specialized in Full-Stack Web Development, secure cloud architectures, and scalable digital systems.">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/transitions.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+</head>
+
+<body>
+
+    <!-- Dynamic Screen Preloader 
+    <div class="loader-wrap">
+        <div class="loader-inner">
+            <div class="loader-cross">
+                <div class="loader-cross-line"></div>
+            </div>
+            <div class="loader-poly"></div>
+            <div class="loader-text-wrap">
+                <p class="loader-text-greating">SYSTEM INITIATING</p>
+                <h3 class="loader-text-name">GLAZY<span>CODE</span></h3>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="index.html" class="header__logo">
+                <p class="header__greating">
+                    <span>GOOD <span class="time-great">MORNING</span>!</span>
+                </p>
+                <div class="header__name">
+                    <div class="header__name-wrap">
+                        <div class="txt-mask fw-bold cl-txt-title fs-20">It's Patrick Macatiag</div>
+                        <div class="txt-mask fw-bold cl-txt-orange fs-20">GlazyCode</div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Navigation Menu -->
+            <nav class="header__menu">
+                <a href="index.html" class="header__menu-link active">HOME</a>
+                <a href="about.html" class="header__menu-link">ABOUT</a>
+                <a href="projects.html" class="header__menu-link">PROJECTS</a>
+                <a href="projects.html" class="header__menu-link">CERTIFICATIONS</a>
+            </nav>
+
+            <!-- Social Shortcuts -->
+            <div class="header__socials">
+                <span class="header__socials-label">LINKS</span>
+                /
+                <a href="https://github.com" target="_blank" class="header__social">GH</a>
+                /
+                <a href="https://linkedin.com" target="_blank" class="header__social">LN</a>
+                /
+                <a href="https://twitter.com" target="_blank" class="header__social">TW</a>
+            </div>
+
+            <!-- Magnetic Let's Talk CTA -->
+            <a href="contact.html" class="header__act" data-cursor-stick>Let's talk!</a>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="header__toggle">
+                <span class="header__toggle-open">MENU</span>
+                <span class="header__toggle-close">CLOSE</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Fullscreen Navigation Overlay -->
+    <div class="mobile-nav-overlay">
+        <ul class="mobile-nav-menu">
+            <li><a href="index.html" class="mobile-nav-link active">HOME</a></li>
+            <li><a href="about.html" class="mobile-nav-link">ABOUT</a></li>
+            <li><a href="projects.html" class="mobile-nav-link">PROJECTS</a></li>
+            <li><a href="contact.html" class="mobile-nav-link">CONTACT</a></li>
+        </ul>
+    </div>
+
+    <!-- Patpat AI Chatbot -->
+<div id="chatbox">
+  <div id="chat-header">
+    <span>GlazyCode 🔥</span>
+    <button id="chat-toggle">✖</button>
+  </div>
+  <div id="chat-messages"></div>
+  <div id="chat-input-container">
+    <input type="text" id="chat-input" placeholder="Type your message...">
+    <button id="chat-send">Send</button>
+  </div>
+</div>
+<button id="chat-open-btn">💬</button>
+
+    <!-- Page AJAC wrapper -->
+    <main id="swup" class="page-container" data-namespace="home">
+
+        <!-- Hero → Tech Stack pinned scroll bridge (GitHub-style) -->
+        <div class="home__hero-tech-bridge" data-scroll-bridge>
+
+            <div class="home__hero-tech-stage">
+                <div class="home__hero-pin" data-hero-pin>
+                    <!-- Hero Banner Section (pinned) -->
+                    <section class="home__hero" data-hero-section>
+                        <div class="home__hero-main" data-hero-layer="main">
+                            <div class="container grid">
+
+                                <div class="home__hero-title-wrap grid-12 reveal-up">
+                                    <div class="home__hero-greating-wrap">
+                                        <h2 class="h5 fw-med home__hero-name">
+                                            <span class="cl-txt-orange">Patrick Macatiag</span> <span
+                                                class="cl-txt-mute">/ Aspiring
+                                                Software Engineer From Philippines </span>
+                                        </h2>
+                                    </div>
+                                    <h1 class="h1 fw-bold upper home__hero-title">
+                                        <div class="home__hero-title-txt">I CODE FOR</div>
+                                        <div class="cl-txt-orange home__hero-title-slide">
+                                            <div class="home__hero-title-slide-inner">
+                                                <div class="slide-txt-item">Fun</div>
+                                                <div class="slide-txt-item">Growth</div>
+                                                <div class="slide-txt-item">Innovation</div>
+                                                <div class="slide-txt-item">Creativity</div>
+                                                <div class="slide-txt-item">Solutions</div>
+                                                <div class="slide-txt-item">Fun</div>
+                                            </div>
+                                        </div>
+                                    </h1>
+                                    <div class="hero-social-links">
+                                        <p class="cta-text">My Social Links</p>
+                                        <a href="https://github.com" target="_blank" aria-label="GitHub"><img
+                                                src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"
+                                                alt="GitHub" width="32" height="32" /></a>
+                                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><img
+                                                src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+                                                alt="LinkedIn" width="32" height="32" /></a>
+                                        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><img
+                                                src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+                                                alt="Facebook" width="32" height="32" /></a>
+                                    </div>
+                                    <span class="home__hero-scrolldown">(Scroll down)</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Cyber Portrait -->
+                        <div class="home__hero-bg" data-hero-layer="bg">
+                            <div class="home__hero-bg-main">
+                                <div class="home__hero-bg-main-wrap reveal-scale">
+                                    <div class="home__hero-bg-main-inner-bg"></div>
+                                    <div class="home__hero-bg-main-inner-man">
+                                        <img src="images/developer_portrait.png" alt="GlazyCode Cyber Portrait">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Tech Stack card — slides over pinned Hero -->
+                <section class="home__tech-stack" id="tech-stack" data-tech-card aria-label="Technology stack">
+                    <div class="container home__tech-stack-wrap">
+                        <div class="home__tech-stack-inner">
+                            <header class="home__tech-stack-header">
+                                <span class="home__tech-stack-label">(Toolbox)</span>
+                                <h2 class="home__tech-stack-title h2 fw-bold upper">Tech Stack</h2>
+                                <p class="home__tech-stack-desc">Languages, frameworks, and tools I build with daily.
+                                </p>
+                            </header>
+
+                            <div class="home__tech-stack-panel" data-parallax-panel>
+                                <div class="home__tech-stack-canvas">
+                                    <div class="tech-stack-logo" data-speed-y="-0.3" data-speed-x="0.18"
+                                        data-depth="0.8">
+                                        <img src="images/techstack_logo/html.svg" alt="HTML5" width="72" height="72" />
+                                    </div>
+                                    <div class="tech-stack-logo" data-speed-y="0.25" data-speed-x="-0.15"
+                                        data-depth="0.6">
+                                        <img src="images/techstack_logo/css.svg" alt="CSS3" width="72" height="72" />
+                                    </div>
+                                    <div class="tech-stack-logo" data-speed-y="-0.22" data-speed-x="0.12"
+                                        data-depth="1">
+                                        <img src="images/techstack_logo/js.svg" alt="JavaScript" width="72"
+                                            height="72" />
+                                    </div>
+                                    <div class="tech-stack-logo" data-speed-y="0.28" data-speed-x="-0.2"
+                                        data-depth="0.7">
+                                        <img src="images/techstack_logo/php.svg" alt="PHP" width="72" height="72" />
+                                    </div>
+                                    <div class="tech-stack-logo" data-speed-y="-0.35" data-speed-x="0.22"
+                                        data-depth="0.85">
+                                        <img src="images/techstack_logo/mysql.svg" alt="MySQL" width="72" height="72" />
+                                    </div>
+                                    <div class="tech-stack-logo" data-speed-y="0.2" data-speed-x="-0.18"
+                                        data-depth="0.65">
+                                        <img src="images/techstack_logo/python.svg" alt="Python" width="72"
+                                            height="72" />
+                                    </div>
+                                    <div class="tech-stack-logo" data-speed-y="-0.26" data-speed-x="0.14"
+                                        data-depth="0.55">
+                                        <img src="images/techstack_logo/flutter.svg" alt="Flutter" width="72"
+                                            height="72" />
+                                    </div>
+                                    <div class="tech-stack-logo" data-speed-y="0.24" data-speed-x="-0.16"
+                                        data-depth="0.9">
+                                        <img src="images/techstack_logo/git.svg" alt="Git" width="72" height="72" />
+                                    </div>
+                                    <div class="tech-stack-logo" data-speed-y="-0.32" data-speed-x="0.1"
+                                        data-depth="0.75">
+                                        <img src="images/techstack_logo/github.svg" alt="GitHub" width="72"
+                                            height="72" />
+                                    </div>
+                                    <div class="tech-stack-logo" data-speed-y="0.18" data-speed-x="-0.12"
+                                        data-depth="0.5">
+                                        <img src="images/techstack_logo/firebase.svg" alt="Firebase" width="72"
+                                            height="72" />
+                                    </div>
+                                    <div class="tech-stack-logo" data-speed-y="-0.2" data-speed-x="0.2"
+                                        data-depth="0.7">
+                                        <img src="images/techstack_logo/figma.svg" alt="Figma" width="72" height="72" />
+                                    </div>
+                                    <div class="tech-stack-logo" data-speed-y="0.3" data-speed-x="-0.1"
+                                        data-depth="0.6">
+                                        <img src="images/techstack_logo/vercel.jpg" alt="Vercel" width="72"
+                                            height="72" />
+                                    </div>
+                                    <div class="tech-stack-logo" data-speed-y="-0.15" data-speed-x="0.08"
+                                        data-depth="0.8">
+                                        <img src="images/techstack_logo/adobe-photoshop-icon.svg" alt="Photoshop"
+                                            width="72" height="72" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div><!-- /.home__hero-tech-bridge -->
+
+        <!-- Intro Section -->
+        <section class="home__intro">
+            <div class="container grid">
+
+                <!-- Intro Statement -->
+                <div class="home__intro-main">
+                    <div class="home__intro-main-txt" id="philosophy-typing">
+                        <span class="home__intro-main-label philosophy-label">(Philosophy)</span>
+                        <div class="philosophy-paragraphs">
+                            <p class="philosophy-paragraph" data-philosophy-paragraph="0">Technology is not just about
+                                writing code; it's about solving real-world problems through structural thinking,
+                                beautiful interfaces, and rapid database systems.</p>
+                            <p class="philosophy-paragraph" data-philosophy-paragraph="1">Through my Bachelor of Science
+                                in Information Technology journey, I have specialized in building robust mobile
+                                applications using Flutter, managing relational databases with PHP and MySQL, and
+                                designing layouts in Figma.</p>
+                            <p class="philosophy-paragraph" data-philosophy-paragraph="2">My objective is to grow as a
+                                software engineer who crafts reliable, high-performance software systems that solve user
+                                problems and streamline workflows.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Awards Checklist -->
+                <div class="home__intro-awards">
+                    <h3 class="h4 cl-txt-title upper home__intro-awards-title reveal-up">Academic & Technical Honors
+                    </h3>
+                    <div class="home__intro-awards-wrap reveal-stagger">
+
+                        <div class="home__intro-award-item">
+                            <p class="home__intro-award-name">Capstone Project of the Year</p>
+                            <p class="home__intro-award-year">2025</p>
+                            <p class="home__intro-award-category">Outstanding IoT Software</p>
+                        </div>
+
+                        <div class="home__intro-award-item">
+                            <p class="home__intro-award-name">AWS Academy Cloud Specialist</p>
+                            <p class="home__intro-award-year">2024</p>
+                            <p class="home__intro-award-category">Cloud Engineering Certificate</p>
+                        </div>
+
+                        <div class="home__intro-award-item">
+                            <p class="home__intro-award-name">Inter-University Hackathon Winner</p>
+                            <p class="home__intro-award-year">2024</p>
+                            <p class="home__intro-award-category">First Place / AI Category</p>
+                        </div>
+
+                        <div class="home__intro-award-item">
+                            <p class="home__intro-award-name">Academic Excellence Award</p>
+                            <p class="home__intro-award-year">2023 - 2025</p>
+                            <p class="home__intro-award-category">Consistent Dean's List Honors</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Sliding Double Marquees -->
+                <div class="home__intro-service-wrap">
+                    <div class="marquee-container black">
+                        <div class="marquee-content">
+                            <span class="marquee-item">ASPIRING SOFTWARE ENGINEER</span>
+                            <span class="marquee-item">PROBLEM SOLVER</span>
+                            <span class="marquee-item">BSIT STUDENT</span>
+                            <span class="marquee-item">ASPIRING SOFTWARE ENGINEER</span>
+                            <span class="marquee-item">PROBLEM SOLVER</span>
+                            <span class="marquee-item">BSIT STUDENT</span> <!-- Repeat for infinite loops -->
+                        </div>
+                    </div>
+                    <div class="marquee-container orange">
+                        <div class="marquee-content reverse">
+                            <span class="marquee-item">FLUTTER MOBILE APPS</span>
+                            <span class="marquee-item">PHP & MYSQL SYSTEMS</span>
+                            <span class="marquee-item">FIGMA & PHOTOSHOP DESIGN</span>
+                            <span class="marquee-item">FLUTTER MOBILE APPS</span>
+                            <span class="marquee-item">PHP & MYSQL SYSTEMS</span>
+                            <span class="marquee-item">FIGMA & PHOTOSHOP DESIGN</span>
+                            <!-- Repeat for infinite loops -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ═══ Scroll-Driven Project Showcase ═══ -->
+        <div class="project-showcase" id="project-showcase" data-project-showcase>
+
+            <!-- Sticky viewport — pinned while user scrolls through wrapper -->
+            <div class="project-showcase__stage">
+
+                <!-- Section header -->
+                <header class="project-showcase__header">
+                    <div class="container">
+                        <span class="project-showcase__label">(Featured Projects)</span>
+                        <h2 class="project-showcase__heading">
+                            <span class="project-showcase__heading-line">PROJECT CASES</span>
+                            <span class="project-showcase__heading-line">IMPLEMENTED <span
+                                    class="project-showcase__heading-year">2024-25</span></span>
+                        </h2>
+                    </div>
+                </header>
+
+                <!-- Stacked project cards -->
+                <div class="project-showcase__cards container">
+
+                    <!-- Card 1 -->
+                    <article class="project-showcase__card" data-project-card="0" data-state="active">
+                        <div class="project-showcase__number" aria-hidden="true">01</div>
+                        <div class="project-showcase__media">
+                            <img src="images/PROJECTS HERO IMG/project1.png" alt="AuraFlow Mobile Application">
+                        </div>
+                        <div class="project-showcase__content">
+                            <div class="project-showcase__meta">
+                                <span class="project-showcase__year">2025</span>
+                                <span class="project-showcase__role">FLUTTER LEAD</span>
+                            </div>
+                            <h3 class="project-showcase__title">AURAFLOW MOBILE APP</h3>
+                            <p class="project-showcase__desc">An intelligent cross-platform mobile tracker dashboard
+                                built as a BSIT capstone project. Integrates Firebase Cloud databases, real-time sync
+                                systems, and gorgeous custom UI widgets.</p>
+                            <div class="project-showcase__tags">
+                                <span class="project-showcase__tag">Flutter / Firebase</span>
+                                <span class="project-showcase__tag">Dart Language</span>
+                                <span class="project-showcase__tag">UI/UX Prototyping</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="project-showcase__card" data-project-card="1" data-state="upcoming">
+                        <div class="project-showcase__number" aria-hidden="true">02</div>
+                        <div class="project-showcase__media">
+                            <img src="images/PROJECTS HERO IMG/project2.jpg" alt="StarPay Esports Platform">
+                        </div>
+                        <div class="project-showcase__content">
+                            <div class="project-showcase__meta">
+                                <span class="project-showcase__year">2025</span>
+                                <span class="project-showcase__role">FULL-STACK DEVELOPER</span>
+                            </div>
+                            <h3 class="project-showcase__title">STARPAY ESPORTS PLATFORM</h3>
+                            <p class="project-showcase__desc">An esports reward management system designed for Stellar
+                                Aviators Esports Team. Features point tracking, leaderboards, and community tools with a
+                                polished dark-mode interface.</p>
+                            <div class="project-showcase__tags">
+                                <span class="project-showcase__tag">PHP / MySQL</span>
+                                <span class="project-showcase__tag">HTML / CSS</span>
+                                <span class="project-showcase__tag">Figma Design</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="project-showcase__card" data-project-card="2" data-state="upcoming">
+                        <div class="project-showcase__number" aria-hidden="true">03</div>
+                        <div class="project-showcase__media">
+                            <img src="images/PROJECTS HERO IMG/project1.png" alt="HistoQuest Game">
+                        </div>
+                        <div class="project-showcase__content">
+                            <div class="project-showcase__meta">
+                                <span class="project-showcase__year">2024</span>
+                                <span class="project-showcase__role">GAME DEVELOPER</span>
+                            </div>
+                            <h3 class="project-showcase__title">HISTOQUEST GAME</h3>
+                            <p class="project-showcase__desc">An educational history-themed adventure game that gamifies
+                                Philippine history learning. Features retro pixel-art aesthetics, quiz mechanics, and
+                                progressive level design.</p>
+                            <div class="project-showcase__tags">
+                                <span class="project-showcase__tag">Unity Engine</span>
+                                <span class="project-showcase__tag">C# Scripting</span>
+                                <span class="project-showcase__tag">Game Design</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="project-showcase__card" data-project-card="3" data-state="upcoming">
+                        <div class="project-showcase__number" aria-hidden="true">04</div>
+                        <div class="project-showcase__media">
+                            <img src="images/PROJECTS HERO IMG/project2.jpg" alt="ByteVault Database Hub">
+                        </div>
+                        <div class="project-showcase__content">
+                            <div class="project-showcase__meta">
+                                <span class="project-showcase__year">2024</span>
+                                <span class="project-showcase__role">BACKEND DEVELOPER</span>
+                            </div>
+                            <h3 class="project-showcase__title">BYTEVAULT DATABASE HUB</h3>
+                            <p class="project-showcase__desc">A secure relational database hub built using PHP and
+                                MySQL. Designed to log, organize, and query school datasets through elegant admin panel
+                                structures and tables.</p>
+                            <div class="project-showcase__tags">
+                                <span class="project-showcase__tag">PHP / MySQL</span>
+                                <span class="project-showcase__tag">Relational Database</span>
+                                <span class="project-showcase__tag">HTML5 / Vanilla CSS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Navigation & progress -->
+                <nav class="project-showcase__nav" aria-label="Project navigation">
+                    <div class="project-showcase__counter">
+                        <span class="project-showcase__counter-current">01</span>
+                        <span class="project-showcase__counter-sep">/</span>
+                        <span class="project-showcase__counter-total">04</span>
+                    </div>
+                    <div class="project-showcase__dots">
+                        <button class="project-showcase__dot active" data-dot="0" aria-label="View project 1"></button>
+                        <button class="project-showcase__dot" data-dot="1" aria-label="View project 2"></button>
+                        <button class="project-showcase__dot" data-dot="2" aria-label="View project 3"></button>
+                        <button class="project-showcase__dot" data-dot="3" aria-label="View project 4"></button>
+                    </div>
+                    <div class="project-showcase__scroll-hint">
+                        <span>Scroll</span>
+                        <svg width="16" height="24" viewBox="0 0 16 24" fill="none">
+                            <path d="M8 0v20m0 0l6-6m-6 6l-6-6" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </nav>
+
+            </div>
+        </div>
+        <!-- ═══ /Scroll-Driven Project Showcase ═══ -->
+
+        <!-- ═══ Certificates Showcase ═══ -->
+        <section class="home__certificates" id="certificates">
+            <div class="container">
+                <header class="home__certificates-header reveal-up">
+                    <span class="home__certificates-label">(Certifications)</span>
+                    <h2 class="home__certificates-heading h2 fw-bold upper">
+                        Professional Achievements
+                    </h2>
+                </header>
+
+                <div class="home__certificates-grid reveal-stagger">
+
+                    <!-- Cert 1 -->
+                    <article class="certificate-card">
+                        <a href="certificates/Introduction to CSS.pdf" target="_blank">
+
+                            <img class="certificate-card__img" src="certificates/Introduction to CSS_page-0001.jpg"
+                                alt="AWS Certificate">
+
+                            <div class="certificate-card__meta">
+                                <span class="certificate-card__year">2024</span>
+                            </div>
+                            <h3 class="certificate-card__title">Introduction to CSS</h3>
+
+                        </a>
+                    </article>
+
+                    <!-- Cert 2 -->
+                    <article class="certificate-card">
+                        <a href="certificates/Setting Up Computer Networks.pdf" target="_blank">
+
+                            <img class="certificate-card__img"
+                                src="certificates/Setting Up Computer Networks_page-0001.jpg" alt="UX Certificate">
+
+                            <div class="certificate-card__meta">
+                                <span class="certificate-card__year">2023</span>
+                            </div>
+                            <h3 class="certificate-card__title">Setting Up Computer Networks</h3>
+
+                        </a>
+                    </article>
+
+                    <!-- Cert 3 -->
+                    <article class="certificate-card">
+                        <a href="certificates/Installing and Configuring Computer Systems.pdf" target="_blank">
+
+                            <img class="certificate-card__img" src="certificates/Introduction to CSS_page-0001.jpg"
+                                alt="Responsive Design Certificate">
+
+                            <div class="certificate-card__meta">
+                                <span class="certificate-card__year">2023</span>
+                            </div>
+                            <h3 class="certificate-card__title">Responsive Web Design</h3>
+
+                        </a>
+                    </article>
+
+                    <!-- Cert 4 -->
+                    <article class="certificate-card">
+                        <a href="certificates/Exploring_Networking_with_Cisco_Packet_Tracer_certificate_patrickmacatiag29-gmail-com_887c40b6-26b0-4e86-98a2-4729b734b2f7.pdf"
+                            target="_blank">
+
+                            <img class="certificate-card__img" src="certificates/cisco.jpg"
+                                alt="Cybersecurity Certificate">
+
+                            <div class="certificate-card__meta">
+                                <span class="certificate-card__year">2022</span>
+                            </div>
+                            <h3 class="certificate-card__title">Cybersecurity Essentials</h3>
+
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+        <!-- ═══ /Certificates Showcase ═══ -->
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <h3>GLAZY<span>CODE</span></h3>
+                    <p>© 2026 - BSIT Portfolio Showcase</p>
+                </div>
+                <div class="footer-links-wrap">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Index</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Socials</h4>
+                        <ul>
+                            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://twitter.com" target="_blank">Twitter/X</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-cta">
+                <a href="contact.html" class="footer-cta-title">LET'S BUILD SOMETHING GREAT →</a>
+            </div>
+
+
+        </div>
+    </footer>
+
+    <!-- Core Engines -->
+    <script src="js/main.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/glazycode-chat/chatbot.js"></script>
+</body>
+
+</html>

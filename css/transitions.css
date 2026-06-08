@@ -1,0 +1,164 @@
+/* ----------------------------------------------------------------
+   GlazyCode Portfolio - Transition Stylesheet (Valentin Cheval Theme)
+   ---------------------------------------------------------------- */
+
+/* Screen wipe overlays */
+.page-wipe-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99999;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Slide Panels */
+.wipe-panel-orange {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent);
+    transition: none;
+    z-index: 2;
+}
+
+.wipe-panel-black {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-primary);
+    transition: none;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Wiping Animations */
+@keyframes wipeIn {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: 0%;
+    }
+}
+
+@keyframes wipeOut {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: -100%;
+    }
+}
+
+/* Overlay Activation Classes */
+.wipe-panel-orange.wipe-in {
+    animation: wipeIn 0.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.wipe-panel-orange.wipe-out {
+    animation: wipeOut 0.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.wipe-panel-black.wipe-in {
+    animation: wipeIn 0.8s cubic-bezier(0.76, 0, 0.24, 1) 0.1s forwards;
+}
+
+.wipe-panel-black.wipe-out {
+    animation: wipeOut 0.8s cubic-bezier(0.76, 0, 0.24, 1) 0.1s forwards;
+}
+
+/* Inner Transition Text */
+.wipe-text {
+    font-family: var(--font-heading);
+    font-size: calc(3rem + 3vw);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.wipe-text.fade-up {
+    animation: wipeTextFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+@keyframes wipeTextFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Container loading animations */
+.page-container {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s var(--ease-smooth), transform 0.5s var(--ease-smooth);
+}
+
+.page-container.page-loading {
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+/* Mobile Screen Full Overlay Menu */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-primary);
+    z-index: 95;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s var(--ease-smooth);
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-nav-menu {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.mobile-nav-link {
+    font-family: var(--font-heading);
+    font-size: 3.6rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    display: inline-block;
+    letter-spacing: -0.02em;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+    color: var(--accent);
+}
