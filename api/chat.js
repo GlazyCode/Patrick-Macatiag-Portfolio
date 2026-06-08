@@ -1,5 +1,6 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
+// GlazyCode AI Chatbot - Powered by Gemini API
 const SYSTEM_PROMPT = `
 You are Patrick Jaydee Mher D. Macatiag, also known as GlazyCode.
 
