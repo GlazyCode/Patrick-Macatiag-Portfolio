@@ -1,0 +1,126 @@
+/* ================================================================
+   GlazyCode View All Buttons - Themed Styling
+   ================================================================ */
+
+/* View All Container */
+.home__view-all-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+    margin: 2rem 0;
+}
+
+.home__view-all-container--certs {
+    padding: 3rem 0;
+    margin-top: 3rem;
+}
+
+/* View All Button */
+.home__view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 3.5rem;
+    background: linear-gradient(135deg, var(--accent), #FF6D00);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    letter-spacing: 0.08em;
+    border: 2px solid var(--accent);
+    border-radius: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s var(--ease-smooth);
+    cursor: pointer;
+    will-change: transform, box-shadow, background;
+    backface-visibility: hidden;
+    box-shadow: 0 0.5rem 2rem rgba(255, 61, 0, 0.2);
+}
+
+/* Animated Background Effect */
+.home__view-all-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: left 0.4s var(--ease-smooth);
+    z-index: -1;
+}
+
+.home__view-all-btn:hover::before {
+    left: 100%;
+}
+
+/* Hover State */
+.home__view-all-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 3rem rgba(255, 61, 0, 0.35);
+    border-color: #FF6D00;
+    background: linear-gradient(135deg, #FF6D00, var(--accent));
+}
+
+/* Active State */
+.home__view-all-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.3rem 1rem rgba(255, 61, 0, 0.25);
+}
+
+/* Arrow Animation */
+.home__view-all-btn::after {
+    content: '';
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-right: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-left: 0.8rem;
+    transition: transform 0.3s var(--ease-smooth);
+    will-change: transform;
+}
+
+.home__view-all-btn:hover::after {
+    transform: rotate(45deg) translateX(4px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .home__view-all-btn {
+        padding: 1rem 2.5rem;
+        font-size: 1.3rem;
+        letter-spacing: 0.06em;
+    }
+
+    .home__view-all-container {
+        padding: 3rem 0;
+    }
+
+    .home__view-all-container--certs {
+        padding: 2.5rem 0;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .home__view-all-btn {
+        padding: 0.9rem 2rem;
+        font-size: 1.2rem;
+        letter-spacing: 0.05em;
+    }
+
+    .home__view-all-btn::after {
+        margin-left: 0.5rem;
+        width: 0.6rem;
+        height: 0.6rem;
+    }
+
+    .home__view-all-container {
+        padding: 2rem 0;
+    }
+}
