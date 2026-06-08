@@ -1,0 +1,13 @@
+{
+  "name": "glazycode-portfolio",
+  "version": "1.0.0",
+  "description": "GlazyCode Portfolio with AI Chatbot",
+  "private": true,
+  "dependencies": {
+    "@google/generative-ai": "^0.7.0",
+    "dotenv": "^16.0.3"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
