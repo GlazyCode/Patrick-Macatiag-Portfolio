@@ -124,9 +124,11 @@ app.post("/chat", async (req, res) => {
     const result = await sendChatMessage(userMessage.trim());
     res.json({ reply: result.response.text() });
   } catch (err) {
-    console.error(err);
+    console.error("Chat error:", err);
     maybeRestartChat(err);
-    res.status(500).json({ reply: "Something went wrong 😭 Try again in a moment." });
+    const errorMsg = err?.message || "Unknown error";
+    console.error("Error message:", errorMsg);
+    res.status(500).json({ reply: "Server error: " + errorMsg });
   }
 });
 
