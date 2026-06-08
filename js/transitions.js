@@ -76,7 +76,7 @@ class PageRouter {
         // Show text after overlay settles
         setTimeout(() => {
             this.wipeText.classList.add('fade-up');
-        }, 300);
+        }, 200);
 
         // 2. Fetch new page HTML after wipe covers the screen
         setTimeout(async () => {
@@ -86,7 +86,7 @@ class PageRouter {
                 console.error('Failed to load page:', err);
                 window.location.href = url; // Fallback to standard redirect if fetch fails
             }
-        }, 800);
+        }, 500);
     }
 
     async loadPage(url, pushState = true) {
@@ -152,8 +152,8 @@ class PageRouter {
             // Reset transition locks
             setTimeout(() => {
                 this.isTransitioning = false;
-            }, 800);
-        }, 500);
+            }, 500);
+        }, 300);
     }
 
     updateActiveNavLinks(url) {

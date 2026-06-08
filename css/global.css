@@ -24,9 +24,9 @@
     /* Transitions */
     --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-    --transition-fast: 0.3s var(--ease-smooth);
-    --transition-medium: 0.6s var(--ease-smooth);
-    --transition-slow: 1s var(--ease-smooth);
+    --transition-fast: 0.2s var(--ease-smooth);
+    --transition-medium: 0.4s var(--ease-smooth);
+    --transition-slow: 0.6s var(--ease-smooth);
 }
 
 /* Reset & Base */

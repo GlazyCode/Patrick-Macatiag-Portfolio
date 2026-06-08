@@ -67,19 +67,19 @@
 
 /* Overlay Activation Classes */
 .wipe-panel-orange.wipe-in {
-    animation: wipeIn 0.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+    animation: wipeIn 0.5s cubic-bezier(0.76, 0, 0.24, 1) forwards;
 }
 
 .wipe-panel-orange.wipe-out {
-    animation: wipeOut 0.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+    animation: wipeOut 0.5s cubic-bezier(0.76, 0, 0.24, 1) forwards;
 }
 
 .wipe-panel-black.wipe-in {
-    animation: wipeIn 0.8s cubic-bezier(0.76, 0, 0.24, 1) 0.1s forwards;
+    animation: wipeIn 0.5s cubic-bezier(0.76, 0, 0.24, 1) 0.05s forwards;
 }
 
 .wipe-panel-black.wipe-out {
-    animation: wipeOut 0.8s cubic-bezier(0.76, 0, 0.24, 1) 0.1s forwards;
+    animation: wipeOut 0.5s cubic-bezier(0.76, 0, 0.24, 1) 0.05s forwards;
 }
 
 /* Inner Transition Text */
