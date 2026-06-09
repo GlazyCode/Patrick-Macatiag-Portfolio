@@ -49,7 +49,19 @@ class PageRouter {
 
         // Handle browser Back/Forward buttons
         window.addEventListener('popstate', () => {
-            this.loadPage(window.location.pathname + window.location.search, false);
+            const url = window.location.pathname + window.location.search;
+            this.loadPage(url, false);
+            
+            // Handle hash navigation on popstate
+            const urlHash = window.location.hash.slice(1);
+            if (urlHash) {
+                setTimeout(() => {
+                    const targetEl = document.getElementById(urlHash);
+                    if (targetEl) {
+                        targetEl.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            }
         });
 
         // Handle hash/anchor link clicks for same-page navigation
@@ -60,6 +72,7 @@ class PageRouter {
             const href = link.getAttribute('href');
             if (!href) return;
 
+            // Same-page hash navigation (e.g., #about)
             if (href.startsWith('#') && !this.isTransitioning) {
                 e.preventDefault();
                 const targetId = href.slice(1);
@@ -147,6 +160,19 @@ class PageRouter {
         // Re-initialize page specific JavaScript controls (scroll reveal, greetings, cursor sticks, etc.)
         if (window.portfolioController) {
             window.portfolioController.reinitialize();
+        }
+
+        // Handle anchor/hash navigation after page load
+        if (pushState) {
+            const urlHash = url.includes('#') ? url.split('#')[1] : '';
+            if (urlHash) {
+                setTimeout(() => {
+                    const targetEl = document.getElementById(urlHash);
+                    if (targetEl) {
+                        targetEl.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            }
         }
 
         // Close mobile overlay menu if open

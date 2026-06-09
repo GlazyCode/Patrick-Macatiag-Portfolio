@@ -95,6 +95,14 @@ button {
     gap: 2rem;
 }
 
+.grid-7 {
+    grid-column: span 7;
+}
+
+.grid-5 {
+    grid-column: span 5;
+}
+
 .line {
     display: block;
     width: 100%;
@@ -1029,6 +1037,7 @@ body.hover-project .custom-cursor {
     border-bottom: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
+    scroll-margin-top: 100px;
 }
 
 /* Connected flow: Tech Stack → Philosophy */
@@ -1179,12 +1188,37 @@ body.hover-project .custom-cursor {
 }
 
 .home__intro-main {
-    grid-column: span 8;
+    grid-column: span 7;
+}
+
+.home__intro-portrait {
+    grid-column: span 5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.home__intro-portrait img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 1.6rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.intro-resume-btns {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.header__act-secondary {
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .home__intro-main-txt {
-    font-size: 2.8rem;
-    line-height: 1.4;
+    font-size: 1.8rem;
+    line-height: 1.6;
     font-weight: 300;
     color: var(--text-secondary);
 }
@@ -1217,8 +1251,8 @@ body.hover-project .custom-cursor {
 }
 
 .philosophy-paragraph {
-    font-size: 2.8rem;
-    line-height: 1.4;
+    font-size: 1.7rem;
+    line-height: 1.7;
     font-weight: 300;
     color: var(--text-secondary);
     position: relative;
@@ -1292,20 +1326,6 @@ body.hover-project .custom-cursor {
     .philosophy-paragraph .typing-cursor {
         display: none !important;
     }
-}
-
-.home__intro-portrait {
-    grid-column: span 4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.home__intro-portrait img {
-    width: 80%;
-    border-radius: 1.5rem;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 /* Awards List */
@@ -1444,6 +1464,7 @@ body.hover-project .custom-cursor {
     position: relative;
     /* (N projects) * 100vh + 100vh entry = 5 viewports for 4 projects */
     height: 500vh;
+    scroll-margin-top: 100px;
 }
 
 /* Sticky viewport — pins while user scrolls through the wrapper */
@@ -1927,6 +1948,7 @@ body.hover-project .custom-cursor {
     background-color: var(--bg-primary);
     position: relative;
     border-top: 1px solid var(--border-color);
+    scroll-margin-top: 100px;
 }
 
 .home__certificates-header {
