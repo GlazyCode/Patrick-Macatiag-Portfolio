@@ -1265,6 +1265,15 @@ body.hover-project .custom-cursor {
     overflow: hidden;
 }
 
+.philosophy-highlight {
+    color: var(--accent);
+    font-weight: 700;
+    background: rgba(255, 61, 0, 0.15);
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.3rem;
+    display: inline-block;
+}
+
 .philosophy-paragraph.is-typing,
 .philosophy-paragraph.is-complete {
     opacity: 1;
@@ -1607,6 +1616,11 @@ body.hover-project .custom-cursor {
     transition:
         transform 0.85s var(--ease-out-expo),
         box-shadow 0.85s var(--ease-out-expo);
+}
+
+.project-showcase__media-link {
+    display: block;
+    cursor: none;
 }
 
 /* Accent glow on active card's image */

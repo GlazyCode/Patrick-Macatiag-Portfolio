@@ -168,6 +168,69 @@ class PortfolioController {
 
         // Portrait & Image scroll parallax
         this.initScrollParallax();
+
+        // Navigation active state on scroll
+        this.initNavHighlightOnScroll();
+    }
+
+    initNavHighlightOnScroll() {
+        const sections = document.querySelectorAll('[id="swup"], #about, #project-showcase, #certificates');
+        const navLinks = document.querySelectorAll('.header__menu-link, .mobile-nav-link');
+
+        if (sections.length === 0) return;
+
+        const updateActiveLink = () => {
+            let currentSection = '';
+            const scrollPos = window.scrollY + 100; // Offset for header
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            // Default to swup (home) if no section matched
+            if (!currentSection && window.scrollY < 100) {
+                currentSection = 'swup';
+            }
+
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (!href) return;
+
+                const linkHash = href.includes('#') ? href.split('#')[1] : '';
+
+                // Remove active from all
+                link.classList.remove('active');
+
+                // Add active if this link matches current section
+                if (linkHash && linkHash === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        };
+
+        let ticking = false;
+        const onScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    updateActiveLink();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        };
+
+        // Initial check
+        updateActiveLink();
+
+        // Also check on resize
+        window.removeEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.removeEventListener('resize', updateActiveLink);
+        window.addEventListener('resize', updateActiveLink);
     }
 
     // 4a. GitHub-style pinned Hero + Tech Stack card overlay + logo parallax
@@ -413,10 +476,12 @@ class PortfolioController {
         const paragraphs = Array.from(container.querySelectorAll('.philosophy-paragraph'));
         if (paragraphs.length === 0) return;
 
-        // Store original text and prepare DOM for typing
+        // Store original HTML with highlights and prepare DOM for typing
         const paragraphData = paragraphs.map(p => {
+            // Store the original HTML to restore after typing
+            const originalHTML = p.innerHTML;
             const fullText = p.textContent;
-            p.textContent = ''; // Clear for typing
+            p.innerHTML = ''; // Clear for typing
             const output = document.createElement('span');
             output.className = 'typing-output';
             const cursor = document.createElement('span');
@@ -424,7 +489,7 @@ class PortfolioController {
             cursor.setAttribute('aria-hidden', 'true');
             p.appendChild(output);
             p.appendChild(cursor);
-            return { element: p, output, cursor, fullText, charIndex: 0, complete: false };
+            return { element: p, output, cursor, fullText, originalHTML, charIndex: 0, complete: false };
         });
 
         // Natural typing speed: variable delays based on punctuation
@@ -490,6 +555,12 @@ class PortfolioController {
                     data.complete = true;
                     data.element.classList.remove('is-typing');
                     data.element.classList.add('is-complete');
+                    // Restore original HTML with highlights after typing completes
+                    if (data.originalHTML) {
+                        data.output.remove();
+                        data.cursor.remove();
+                        data.element.innerHTML = data.originalHTML;
+                    }
                 }
             }
 
@@ -658,6 +729,7 @@ class PortfolioController {
         this.initContactForm();
         this.initPhilosophyTyping();
         this.initProjectShowcase();
+        this.initNavHighlightOnScroll();
     }
 }
 
