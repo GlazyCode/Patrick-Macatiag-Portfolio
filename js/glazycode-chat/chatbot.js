@@ -8,6 +8,11 @@ const chatOpenBtn = document.getElementById("chat-open-btn");
 // Open Chat
 chatOpenBtn.addEventListener("click", () => {
   chatBox.classList.add("active");
+  // Add welcome message when chat opens (only once)
+  if (!chatMessages.dataset.welcomed) {
+    addMessage("Hi there! 👋🏻 Thanks for visiting my website. Feel free to ask me anything about programming, web development, or my experiences in tech. Let me know how I can help!", "bot");
+    chatMessages.dataset.welcomed = "true";
+  }
 });
 // Close Chat
 chatToggle.addEventListener("click", () => {
@@ -18,7 +23,11 @@ chatToggle.addEventListener("click", () => {
 function addMessage(text, sender) {
   const message = document.createElement("div");
   message.classList.add("message", sender);
-  message.textContent = text;
+  if (sender === "bot") {
+    message.innerHTML = `<img class="avatar" src="images/developer_portrait.png" alt="AI"><div class="text">${text}</div>`;
+  } else {
+    message.textContent = text;
+  }
   chatMessages.appendChild(message);
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
@@ -40,6 +49,7 @@ async function sendMessage() {
   const typingMsg = document.createElement("div");
   typingMsg.classList.add("message", "bot");
   typingMsg.innerHTML = `
+    <img class="avatar" src="images/developer_portrait.png" alt="AI">
     <div class="typing">
       <span></span>
       <span></span>

@@ -89,7 +89,13 @@
     <!-- Patpat AI Chatbot -->
 <div id="chatbox">
   <div id="chat-header">
-    <span>GlazyCode 🔥</span>
+    <span class="chat-status">
+      <img class="avatar" src="images/developer_portrait.png" alt="Patrick">
+      <span class="status-text">
+        <span class="status-name">Chat with Patrick</span>
+        <span class="status-online">Online</span>
+      </span>
+    </span>
     <button id="chat-toggle">✖</button>
   </div>
   <div id="chat-messages"></div>
@@ -98,7 +104,12 @@
     <button id="chat-send">Send</button>
   </div>
 </div>
-<button id="chat-open-btn">💬</button>
+<button id="chat-open-btn">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+  Chat with Patrick
+</button>
 
     <!-- Page AJAC wrapper -->
     <main id="swup" class="page-container" data-namespace="home">
@@ -593,7 +604,7 @@
 
                 <!-- View All Certificates Button -->
                 <div class="home__view-all-container home__view-all-container--certs">
-                    <a href="projects.html#certificates" class="home__view-all-btn">VIEW ALL CERTIFICATIONS →</a>
+                    <a href="certificates.html" class="home__view-all-btn">VIEW ALL CERTIFICATIONS →</a>
                 </div>
             </div>
         </section>
