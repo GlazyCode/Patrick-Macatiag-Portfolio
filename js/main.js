@@ -295,10 +295,6 @@ class PortfolioController {
             const panelY = centered * 22 * parallaxStrength;
             panel.style.transform = `translate3d(0, ${panelY}px, 0)`;
 
-            logos.forEach((logo) => {
-                logo.style.transform = 'none';
-            });
-
             ticking = false;
         };
 
